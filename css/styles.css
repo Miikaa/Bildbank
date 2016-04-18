@@ -9,6 +9,6 @@ img {
  .search_bar {
 	background-color: #aaacad;
 }
-.form-control {
-	padding:5px;
+.container search_bar {
+	padding:5px 5px 15px 5px;
 }
