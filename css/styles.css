@@ -9,3 +9,6 @@ img {
  .search_bar {
 	background-color: #aaacad;
 }
+.form-control {
+	padding:5px;
+}
