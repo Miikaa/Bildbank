@@ -2,13 +2,12 @@ img {
 	max-width: 100%;
 	
 }
-.col-sm-6 {
+.col-sm-6, .col-md-12 {
 	padding: 15px;
 }
 
- .search_bar {
+.input-group {
+	padding:15px;
 	background-color: #aaacad;
 }
-.container search_bar {
-	padding:5px 5px 15px 5px;
-}
+
