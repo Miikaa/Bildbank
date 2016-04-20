@@ -2,12 +2,17 @@ img {
 	max-width: 100%;
 	
 }
+#logo {
+	height: 50px;
+	margin-bottom: -10px;
+}
+
 .col-sm-6, .col-md-12 {
 	padding: 15px;
 }
 
 .input-group {
 	padding:15px;
-	background-color: #aaacad;
+	background-color: #f2f2f2;
 }
 
