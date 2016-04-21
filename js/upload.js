@@ -1,4 +1,4 @@
-+ function($) {
+(function($) {
     'use strict';
 
     // UPLOAD CLASS DEFINITION
@@ -35,4 +35,4 @@
         return false;
     }
 
-}(jQuery);
+})(jQuery);
