@@ -21,4 +21,4 @@ TO DO
 -Infinite scroll
 -Att sidan är 2 bilder bred på telefonen/en fittit liten skärm
 -En filter funktion?
--
+
