@@ -1,0 +1,19 @@
+Hur man använder nätsidan.
+
+  Inloggning
+  Inloggningen sker i övre högra hörnet. En pop-up kommer fram och där skriver du in dina kredentialer.
+  
+  Att ladda upp en bild
+  Användaren måst vara loggad in för att ladda upp en bild till bildbanken. Tryck på //NOT READY
+  
+  Nyckelord/Sökfunktion
+  I övre delen av sidan?? finns det en sökfunktion. Här kan man söka efter nyckelord som har lagats till bilderna som bildens tilläggare
+  kan fylla in.
+  
+  Huvudsida
+  Man kan också bara kolla genom bilder som har läggt till av alla användare. Du kan sortera dem med; nyaste, äldsta, storlek och i alfabetisk ordning enligt tags/bildens namn?
+  Sidan har en "oendlig" scroll. Sidan laddar upp altid nya bilder automatisk när man kommer neråt på sidan.
+  
+  
+  
+  
