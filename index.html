@@ -6,6 +6,9 @@
 			<meta name="viewport" content="width=device-width, initial-scale=1.0">
 			<link href="css/bootstrap.min.css" rel="stylesheet">
 			<link href="css/styles.css" rel ="stylesheet">
+			<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+			<link href='http://fonts.googleapis.com/css?family=Varela+Round' rel='stylesheet' type='text/css'>
+			
 		</head>
 		<body>
 		
@@ -19,24 +22,31 @@
 				<a href="#">
 					<img id="logo" src="http://prakticum.fi/img/prakticum_logo.svg">
 				</a>
-											<!-- LOGIN -->
-				<a href="#">
+											<!-- LOGIN -->						
+				<a href="#" data-toggle="modal" data-target="#myModal">
 					<img id="login" src="https://pixabay.com/static/uploads/photo/2012/04/15/22/08/log-in-35497_960_720.png">
 				</a>
+				
+				
+											<!-- UPLOAD KNAPP -->
+				
+			<button id="upload" type="button" class="btn btn-default" data-toggle="modal" data-target="#uploadModal">Ladda upp</button> 
+			<!-- <input id="upload" class="btn btn-default btn-sm" type="submit" value="Ladda upp"> -->
 			</div>
 											<!-- SÖK BAR -->
 				<div class="col-md-12 search_bar">
 					<div class="input-group">
 					  <input type="text" class="form-control" placeholder="Sök nyckelord...">
 				<span class="input-group-btn">
-					<button class="btn btn-default" type="button">Sök!</button>
+					<!-- <button class="btn btn-default" type="button">Sök!</button> -->
+					<input class="btn btn-default" type="submit" value="Sök!">
 				</span>
 					</div><!-- /input-group -->
 				  </div><!-- /.col-lg-6 -->
 				  </header>
 											<!-- BILDERNA -->
-			<ul>
-				<li>
+			
+				
 				<div class="row">
 					<div class = "col-sm-6 col-md-3">
 						<img src="http://placehold.it/640x300" class="img-rounded">
@@ -113,12 +123,103 @@
 				</div>
 			
 			</div>
-			</li>
-		</ul>
-				
+			
+				  <!-- UPLOAD MODAL -->
+	  
+	  <div id="uploadModal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Ladda upp bilder</h4>
+      </div>
+      <div class="modal-body">
+        
+		<span>
+			<input  type="file" 
+					style="visibility:hidden; width: 1px;" 
+					id='${multipartFilePath}' name='${multipartFilePath}'  
+					onchange="$(this).parent().find('span').html($(this).val().replace('C:\\fakepath\\', ''))"  /> <!-- Chrome security returns 'C:\fakepath\'  -->
+			<input class="btn btn-primary" type="button" value="Bläddra..." onclick="$(this).parent().find('input[type=file]').click();"/> <!-- on button click fire the file click event -->
+			&nbsp;
+			<span  class="badge badge-important" ></span>
+		</span>
+		
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Stäng</button>
+      </div>
+    </div>
+
+  </div>
+</div>
+	  
+	  <!-- UPLOAD MODAL END -->
+			
+			<!-- LOGIN MODAL -->
+
+<!-- Modal -->
+<div id="myModal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Admin login</h4>
+      </div>
+      <div class="modal-body">
+        
+				<!-- LOGIN FORM -->
+		<div class="text-center" style="padding:50px 0">
+			<div class="logo">Logga in</div>
+			<!-- Main Form -->
+			<div class="login-form-1">
+				<form id="login-form" class="text-left">
+					<div class="login-form-main-message"></div>
+					<div class="main-login-form">
+						<div class="login-group">
+							<div class="form-group">
+								<label for="lg_username" class="sr-only">användarnamn</label>
+								<input type="text" class="form-control" id="lg_username" name="lg_username" placeholder="användarnamn">
+							</div>
+							<div class="form-group">
+								<label for="lg_password" class="sr-only">lösenord</label>
+								<input type="password" class="form-control" id="lg_password" name="lg_password" placeholder="lösenord">
+							</div>
+							<!-- <div class="form-group login-group-checkbox">
+								<input type="checkbox" id="lg_remember" name="lg_remember">
+								<label for="lg_remember">remember</label>
+							</div> -->
+						</div>
+						<button type="submit" class="login-button"><i class="fa fa-chevron-right"></i></button>
+					</div>
+					<!-- <div class="etc-login-form">
+						<p>forgot your password? <a href="#">click here</a></p>
+						<p>new user? <a href="#">create new account</a></p>
+					</div> -->
+				</form>
+			</div>
+			<!-- end:Main Form -->
+		</div>
+		
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Stäng</button>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+					<!-- SCRIPTS -->
+					
+			<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+			<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.13.1/jquery.validate.min.js"></script>
 			<script src = "http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 			<script src = "js/bootstrap.js"></script>
-			<script src = "js/bildbank.js"></script>
 
 			</body>
 </html>
