@@ -26,5 +26,6 @@ TO DO
     -En filter funktion?
     
     -När man trycker på en bild visar sidan den i större resolution samt med mera info om bilden. (datum,resolution, upplodare, etc.)
-
+    
+    -Är "search baren" lite för bred...?
     
