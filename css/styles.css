@@ -322,3 +322,10 @@ label:hover:before {
   color: #aaaaaa;
   font-weight: bold;
 }
+
+/* UPLOAD BTN */
+#js-upload-submit {
+	float: right;
+	position: relative;
+	
+}
