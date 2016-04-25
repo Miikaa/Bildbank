@@ -1,7 +1,8 @@
-img {
+ img {
 	max-width: 100%;
 	
-}
+} 
+
 #logo {
 	height: 50px;
 	margin-bottom: -10px;
@@ -9,6 +10,22 @@ img {
 
 .col-sm-6, .col-md-12 {
 	padding: 15px;
+}
+
+.img-rounded {
+	-webkit-transition: all 1s ease;
+	-moz-transition: all 1s ease;
+	-o-transition: all 1s ease;
+	-ms-transition: all 1s ease;
+	transition: all 1s ease;
+}
+
+.img-rounded:hover {
+	-webkit-transform: scale(1.10);
+	-moz-transform: scale(1.10);
+	-o-transform: scale(1.10);
+	-ms-transform: scale(1.10);
+	transform: scale(1.10);
 }
 
 .input-group {
