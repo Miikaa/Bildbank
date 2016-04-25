@@ -207,31 +207,32 @@
 
 $(document).ready(function () {
     $('#defaultForm')
-        .find('[name="cities"]')
+        .find('[name="taggar"]')
     // Revalidate the color when it is changed
     .change(function (e) {
-        console.warn($('[name="cities"]').val());
+        console.warn($('[name="taggar"]').val());
         console.info($('#aa').val());
         console.info($("#aa").tagsinput('items'));
         var a = $("#aa").tagsinput('items');
         console.log(typeof (a));
         console.log(a.length);
-        $('#defaultForm').bootstrapValidator('revalidateField', 'cities');
+        $('#defaultForm').bootstrapValidator('revalidateField', 'taggar');
     })
         .end()
-        .find('[name="cities1"]')
+        .find('[name="taggar1"]')
     // Revalidate the color when it is changed
     .change(function (e) {
-        console.warn($('[name="cities1"]').val());
+        console.warn($('[name="taggar1"]').val());
         console.info($('#aa1').val());
         console.info($("#aa1").tagsinput('items'));
         var a = $("#aa1").tagsinput('items');
         console.log(typeof (a));
         console.log(a.length);
-        $('#defaultForm').bootstrapValidator('revalidateField', 'cities1');
+       /* $('#defaultForm').bootstrapValidator('revalidateField', 'taggar1'); */
     })
         .end()
-     /*   .bootstrapValidator({
+       
+	   /* .bootstrapValidator({
         excluded: ':disabled',
         feedbackIcons: {
             valid: 'glyphicon glyphicon-ok',
@@ -239,20 +240,20 @@ $(document).ready(function () {
             validating: 'glyphicon glyphicon-refresh'
         },
         fields: {
-            cities: {
+            taggar: {
                 validators: {
                     notEmpty: {
                         message: 'Please enter at least one city you like the most'
                     }
                 }
             },
-            cities1: {
+            taggar1: {
                 validators: {
                     callback: {
                         message: 'Please choose 2-4 color you like most',
                         callback: function (value, validator) {
                             // Get the selected options
-                            var options = validator.getFieldElements('cities1').tagsinput('items');
+                            var options = validator.getFieldElements('taggar1').tagsinput('items');
                             // console.info(options);
                             return (options !== null && options.length >= 2 && options.length <= 4);
                         }
@@ -260,7 +261,7 @@ $(document).ready(function () {
                 }
             }
         }
-    }) */
+    })  */
         .on('success.form.bv', function (e) {
         // Prevent form submission
         e.preventDefault();
