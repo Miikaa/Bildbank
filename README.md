@@ -19,6 +19,13 @@ Day 4 (21.4) Sidan börjar se väldigt bra ut. PHP koden och databasen borde var
 
 Day 5 (22.4) Fixade alla .js filer till en .js fil, så det inte skulle bli för mycket i .html filen. Filen vi skall jobba med heter då alltså "script.js"! Förhoppningsvist så fungerar den, fast jag bara copy-pasta alla .js koder dit från de andra filerna... Försökte också fighta med dendä jävla tags-inputten och försöka få den lika bred som de andra fälten, men den vill inte lyssna på mig... >:/ Kanske nån dag... - Ronja
 
+Day 6.(25.4) Siis painettii röitä 8-17 kjeh kjeh.
+
+Day 7.(26.4)
+
+
+
+
 TO DO
 
     -Infinite scroll
