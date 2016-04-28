@@ -21,7 +21,11 @@ Day 5 (22.4) Fixade alla .js filer till en .js fil, så det inte skulle bli för
 
 Day 6.(25.4) Siis painettii röitä 8-17 kjeh kjeh.
 
-Day 7.(26.4)
+Day 7.(26.4) Progress.
+
+Day 8.(27.4) Nothing
+
+Day 9.(28.4)-
 
 
 
