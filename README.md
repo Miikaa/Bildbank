@@ -27,18 +27,24 @@ Day 8.(27.4) Nothing
 
 Day 9.(28.4)Databasen är färdig. PHP är helt okejish, Miika behövs för att göra den färdig. Front enden ser semi prima ut.
 
-Day 10.(29.4)
+Day 10.(29.4)emt
+
+Day 11.(2.5)emt
+
+Day 12.(3.5)emt
+
+Day 13.(4.5)emt
 
 
 TO DO
 
-    -Infinite scroll
+    -Infinite scroll //DONE
     
     -Att sidan är 2 bilder bred på telefonen/en fittit liten skärm
     
     -En filter funktion?
     
-    -När man trycker på en bild visar sidan den i större resolution samt med mera info om bilden. (datum,resolution, upplodare, etc.)
+    -När man trycker på en bild visar sidan den i större resolution samt med mera info om bilden. (datum,resolution, upplodare, etc.) //DONE
     
     -Är "search baren" lite för bred...?
     
