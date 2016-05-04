@@ -33,7 +33,7 @@ Day 11.(2.5)emt
 
 Day 12.(3.5)emt
 
-Day 13.(4.5)emt
+Day 13.(4.5) Infinite scroll är fixad (tack Paul)!
 
 
 TO DO
