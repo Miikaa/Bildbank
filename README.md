@@ -35,6 +35,8 @@ Day 12.(3.5)emt
 
 Day 13.(4.5) Infinite scroll är fixad (tack Paul)!
 
+Day 14 (9.5) Login fixat, thanks Miika!
+
 
 TO DO
 
