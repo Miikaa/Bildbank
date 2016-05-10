@@ -36,6 +36,7 @@ Day 12.(3.5)emt
 Day 13.(4.5) Infinite scroll är fixad (tack Paul)!
 
 Day 14 (9.5) Login fixat, thanks Miika!
+
 Day 15 (10.5) Lite problem här; om man vill ha infinite scroll att fungera så fungerar inte loginen. Om man igen vill logga in så fungerar inte infinite scroll. What do? Borde man lite gå tillbaka i tiden och börja igen med en fungerande version av infinite scrollen, och sedan försöka steg-för-steg adda in loginen?
 
 
