@@ -131,21 +131,21 @@ $(document).ready(function () {
     // Revalidate the color when it is changed
     .change(function (e) {
         console.warn($('[name="taggar"]').val());
-        console.info($('#aa').val());
-        console.info($("#aa").tagsinput('items'));
-        var a = $("#aa").tagsinput('items');
+        console.info($('#image_tag').val());
+        console.info($("#image_tag").tagsinput('items'));
+        var a = $("#image_tag").tagsinput('items');
         console.log(typeof (a));
         console.log(a.length);
-        $('#defaultForm').bootstrapValidator('revalidateField', 'taggar');
+        $('#defaultForm').bootstrapValidator('revalidateField', 'image_tag');
     })
         .end()
-        .find('[name="taggar1"]')
+        .find('[name="image_tag1"]')
     // Revalidate the color when it is changed
     .change(function (e) {
-        console.warn($('[name="taggar1"]').val());
-        console.info($('#aa1').val());
-        console.info($("#aa1").tagsinput('items'));
-        var a = $("#aa1").tagsinput('items');
+        console.warn($('[name="image_tag1"]').val());
+        console.info($('#image_tag1').val());
+        console.info($("#image_tag1").tagsinput('items'));
+        var a = $("#image_tag1").tagsinput('items');
         console.log(typeof (a));
         console.log(a.length);
        /* $('#defaultForm').bootstrapValidator('revalidateField', 'taggar1'); */
