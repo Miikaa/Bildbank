@@ -1,163 +1,83 @@
 /*********************************************************************************
-										!!!! LOGIN.JS BÖRJAR HÄR !!!!
+										!!!! INFINITE SCROLL !!!!
 **********************************************************************************/
-(function($) {
-    "use strict";
-	
-	// Options for Message
-	//----------------------------------------------
-  var options = {
-	  'btn-loading': '<i class="fa fa-spinner fa-pulse"></i>',
-	  'btn-success': '<i class="fa fa-check"></i>',
-	  'btn-error': '<i class="fa fa-remove"></i>',
-	  'msg-success': 'All Good! Redirecting...',
-	  'msg-error': 'Wrong login credentials!',
-	  'useAJAX': true,
-  };
+/******************************************
+	Infinite jQuery Scroll
+	@author Fabio Mangolini
+	http://www.responsivewebmobile.com
+******************************************/
+jQuery(document).ready(function() {
+	//location.href = 'index.html#start';
+	var pages = new Array(); //key value array that maps the pages. Ex. 1=>page2.html, 2=>page3.html
+	var current = 0; //the index of the starting page. 0 for index.html in this case
+	var loaded = new Array(); //key value array to prevent loading a page more than once
 
-	// Login Form
-	//----------------------------------------------
-	// Validation
-  $("#login-form").validate({
-  	rules: {
-      lg_username: "required",
-  	  lg_password: "required",
-    },
-  	errorClass: "form-invalid"
-  });
-  
-	// Form Submission
-  $("#login-form").submit(function() {
-  	remove_loading($(this));
-		
-		if(options['useAJAX'] == true)
-		{
-			// Dummy AJAX request (Replace this with your AJAX code)
-		  // If you don't want to use AJAX, remove this
-  	  dummy_submit_form($(this));
-		
-		  // Cancel the normal submission.
-		  // If you don't want to use AJAX, remove this
-  	  return false;
+	//get all the pages link inside the #pages div and fill an array
+	$('#pages a').each(function(index) {
+		pages[index] = $(this).attr('href');
+		loaded[$(this).attr('href')] = 0; //initialize all the pages to be loaded to 0. It means that they are not yet been loaded.
+	});
+
+	//on scroll gets when bottom of the page is reached and calls the function do load more content
+	$(window).scroll(function(e){
+		//Not always the pos == h statement is verified, expecially on mobile devices, that's why a 300px of margin are assumed.
+		if($(window).scrollTop() + $(window).height() >= $(document).height() - 300) {
+			console.log("bottom of the page reached!");
+
+			//in some broswer (es. chrome) if the scroll is fast, the bottom 
+			//reach events fires several times, this may cause the page loaging 
+			//more than once. To prevent such situation every time the bottom is 
+			//reached the number of time is added to that page in suach a way to call 
+			//the loadMoreContent page only when the page value in "loaded" array is 
+			//minor or equal to one
+			loaded[pages[current+1]] = loaded[pages[current+1]] + 1; 
+
+			if(loaded[pages[current+1]] <= 1)
+				loadMoreContent(current+1);
 		}
-  });
-	
-	// Register Form
-	//----------------------------------------------
-	// Validation
-  $("#register-form").validate({
-  	rules: {
-      reg_username: "required",
-  	  reg_password: {
-  			required: true,
-  			minlength: 5
-  		},
-   		reg_password_confirm: {
-  			required: true,
-  			minlength: 5,
-  			equalTo: "#register-form [name=reg_password]"
-  		},
-  		reg_email: {
-  	    required: true,
-  			email: true
-  		},
-  		reg_agree: "required",
-    },
-	  errorClass: "form-invalid",
-	  errorPlacement: function( label, element ) {
-	    if( element.attr( "type" ) === "checkbox" || element.attr( "type" ) === "radio" ) {
-    		element.parent().append( label ); // this would append the label after all your checkboxes/labels (so the error-label will be the last element in <div class="controls"> )
-	    }
-			else {
-  	  	label.insertAfter( element ); // standard behaviour
-  	  }
-    }
-  });
+		var $lightbox = $('#lightbox');
+    
+    $('[data-target="#lightbox"]').on('click', function(event) {
+        var $img = $(this).find('img'), 
+            src = $img.attr('src'),
+            alt = $img.attr('alt'),
+            css = {
+                'maxWidth': $(window).width() - 100,
+                'maxHeight': $(window).height() - 100
+            };
+    
+        $lightbox.find('.close').addClass('hidden');
+        $lightbox.find('img').attr('src', src);
+        $lightbox.find('img').attr('alt', alt);
+        $lightbox.find('img').css(css);
+    });
+    
+    $lightbox.on('shown.bs.modal', function (e) {
+        var $img = $lightbox.find('img');
+            
+        $lightbox.find('.modal-dialog').css({'width': $img.width()});
+        $lightbox.find('.close').removeClass('hidden');
+    });
+	});
 
-  // Form Submission
-  $("#register-form").submit(function() {
-  	remove_loading($(this));
-		
-		if(options['useAJAX'] == true)
-		{
-			// Dummy AJAX request (Replace this with your AJAX code)
-		  // If you don't want to use AJAX, remove this
-  	  dummy_submit_form($(this));
-		
-		  // Cancel the normal submission.
-		  // If you don't want to use AJAX, remove this
-  	  return false;
+	//loads the next page and append it to the content with a fadeIn effect. 
+	//Before loading the content it shows and hides the loaden Overlay DIV
+	function loadMoreContent(position) {
+		//try to load more content only if the counter is minor than the number of total pages
+		if(position < pages.length) {
+			$('#loader').fadeIn('slow', function() {
+				$.get(pages[position], function(data) {
+					$('#loader').fadeOut('slow', function() {
+						$('#scroll-container').append(data).fadeIn(999);
+						current=position;
+					});					
+				});
+			});
 		}
-  });
-
-	// Forgot Password Form
-	//----------------------------------------------
-	// Validation
-  $("#forgot-password-form").validate({
-  	rules: {
-      fp_email: "required",
-    },
-  	errorClass: "form-invalid"
-  });
-  
-	// Form Submission
-  $("#forgot-password-form").submit(function() {
-  	remove_loading($(this));
-		
-		if(options['useAJAX'] == true)
-		{
-			// Dummy AJAX request (Replace this with your AJAX code)
-		  // If you don't want to use AJAX, remove this
-  	  dummy_submit_form($(this));
-		
-		  // Cancel the normal submission.
-		  // If you don't want to use AJAX, remove this
-  	  return false;
-		}
-  });
-
-	// Loading
-	//----------------------------------------------
-  function remove_loading($form)
-  {
-  	$form.find('[type=submit]').removeClass('error success');
-  	$form.find('.login-form-main-message').removeClass('show error success').html('');
-  }
-
-  function form_loading($form)
-  {
-    $form.find('[type=submit]').addClass('clicked').html(options['btn-loading']);
-  }
-  
-  function form_success($form)
-  {
-	  $form.find('[type=submit]').addClass('success').html(options['btn-success']);
-	  $form.find('.login-form-main-message').addClass('show success').html(options['msg-success']);
-  }
-
-  function form_failed($form)
-  {
-  	$form.find('[type=submit]').addClass('error').html(options['btn-error']);
-  	$form.find('.login-form-main-message').addClass('show error').html(options['msg-error']);
-  }
-
-	// Dummy Submit Form (Remove this)
-	//----------------------------------------------
-	// This is just a dummy form submission. You should use your AJAX function or remove this function if you are not using AJAX.
-  function dummy_submit_form($form)
-  {
-  	if($form.valid())
-  	{
-  		form_loading($form);
-  		
-  		setTimeout(function() {
-  			form_success($form);
-  		}, 2000);
-  	}
-  }
+	}
 	
-})(jQuery);
-
+});
+////////////////// inf scroll end
 /*********************************************************************************
 										!!!! UPLOAD.JS BÖRJAR HÄR !!!!
 **********************************************************************************/
@@ -265,5 +185,38 @@ $(document).ready(function () {
         .on('success.form.bv', function (e) {
         // Prevent form submission
         e.preventDefault();
+    });
+});
+
+
+
+
+/*********************************************************************************
+						!!!! IMG OPEN ON CLICK BÖRJAR HÄR (aka lightbox) !!!!
+**********************************************************************************/
+$(document).ready(function() {
+    var $lightbox = $('#lightbox');
+    
+    $('[data-target="#lightbox"]').on('click', function(event) {
+		
+        var $img = $(this).find('img'), 
+            src = $img.attr('src'),
+            alt = $img.attr('alt'),
+            css = {
+                'maxWidth': $(window).width() - 100,
+                'maxHeight': $(window).height() - 100
+            };
+    
+        $lightbox.find('.close').addClass('hidden');
+        $lightbox.find('img').attr('src', src);
+        $lightbox.find('img').attr('alt', alt);
+        $lightbox.find('img').css(css);
+    });
+    
+    $lightbox.on('shown.bs.modal', function (e) {
+        var $img = $lightbox.find('img');
+            
+        $lightbox.find('.modal-dialog').css({'width': $img.width()});
+        $lightbox.find('.close').removeClass('hidden');
     });
 });
