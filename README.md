@@ -39,6 +39,8 @@ Day 14 (9.5) Login fixat, thanks Miika!
 
 Day 15 (10.5) Lite problem här; om man vill ha infinite scroll att fungera så fungerar inte loginen. Om man igen vill logga in så fungerar inte infinite scroll. What do? Borde man lite gå tillbaka i tiden och börja igen med en fungerande version av infinite scrollen, och sedan försöka steg-för-steg adda in loginen?
 
+Day 16 (11.5) Fixade login & infinite scroll problemet! :) Laddade upp den nyaste versionen: "ons_11.5.zip". Så ladda ner & packa upp den när ni ska ändra saker.
+
 
 TO DO
 
