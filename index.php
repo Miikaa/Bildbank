@@ -1,7 +1,9 @@
 <?php	
 	session_start();
+	$msg = "";
 	include('php/db_connect.php');
-	include('upload-file.php'); //hämtar php-filen
+	include('php/upload-file.php'); //hämtar php-filen
+	
 ?>
 <!DOCTYPE html>
 <html>
@@ -46,6 +48,12 @@
 		</script>
 		</head>
 		<body id="start">
+		
+		<?php 
+		if(!empty($msg)) {
+			echo "<h3>$msg</h3>"; 
+		} 
+		?>
 			<div id="loader"></div>
 			
 			<div class="container">
@@ -273,59 +281,47 @@
         <!-- börjar här -->
 		
       <div class="panel panel-default">
-        <div class="panel-heading"><strong>Ladda upp bilder</strong> <small> </small></div>
+        <div class="panel-heading"><strong>Ladda upp bilder</strong></div>
         <div class="panel-body">
 		
 		<!-- bild title & stuff -->
 		
-			<form>
+			<form method="post" action="<?php echo $_SERVER['PHP_SELF']; ?>" enctype="multipart/form-data">
 				<fieldset>
 				  <div class="form-group">
 						<label for="title">Bildens titel</label>
-						<input type="text" class="form-control" id="title" name="title">
+						<input type="text" class="form-control" id="image_name" name="image_name">
 				  </div>
 				  <div class="form-group">
 				  <label for="desc">Beskrivning</label>
 				  <textarea class="form-control vresize" rows="4" id="desc" name="desc"></textarea>
 				</div>
-				
-			<!-- </form> -->
-			
-			
+
           <!-- Standar Form -->
           <h4>Välj bilder från din dator...</h4>
-          <form action="" method="post" id="js-upload-form"  enctype="multipart/form-data">
             <div class="form-inline">
               <div class="form-group">
-                <input type="file" name="file" id="js-upload-files" multiple>
+                <input type="file" name="js-upload-files" id="js-upload-files" multiple>
               </div>
             </div>
-          <!-- </form> -->
 
-          <!-- Drop Zone -->
+          <!-- Drop Zone 
           <h5>...eller dra och droppa dem här!</h5>
           <div class="upload-drop-zone" id="drop-zone">
             Drag & drop här
           </div>
-
+		-->
 		  <!-- tags -->
 			<form id="defaultForm" method="post" class="form-horizontal">
 				<div class="form-group">
-					<label class="col-lg-6">Ange tags</label>
-					<div class="col-md-12">
-						<input type="text" name="taggar" id="aa" class="form-control input-sm" value="scenery, wow, impressive, graceful, cool, nice" data-role="tagsinput" />
+					<label for="tags">Ange tags</label>
+					<div class="form-group">
+						<input type="text" name="image_tag" id="image_tag" class="form-control input-sm" value="" data-role="tagsinput" />
 					</div>
 				</div>
-				<!--------
-				<div class="form-group">
-					<div class="col-lg-5 col-lg-offset-3">
-						<button type="submit" class="btn btn-default">Validate</button>
-					</div>
-				</div> 
-				-------> 
 				
 			</form>
-		<button type="submit" class="btn btn-md btn-default" id="js-upload-submit">Upload</button>
+		<button type="submit" name="js-upload-submit" class="btn btn-md btn-default" id="js-upload-submit">Upload</button>
         </div> 
       </div>
       </div>
@@ -373,17 +369,9 @@
 								<label for="lg_password" class="sr-only">lösenord</label>
 								<input type="password" class="form-control" id="lg_password" name="lg_password" placeholder="lösenord">
 							</div>
-							<!-- <div class="form-group login-group-checkbox">
-								<input type="checkbox" id="lg_remember" name="lg_remember">
-								<label for="lg_remember">remember</label>
-							</div> -->
 						</div>
 						<button type="submit" class="login-button"><i class="fa fa-chevron-right"></i></button>
 					</div>
-					<!-- <div class="etc-login-form">
-						<p>forgot your password? <a href="#">click here</a></p>
-						<p>new user? <a href="#">create new account</a></p>
-					</div> -->
 				</form>
 			</div>
 			<!-- end:Main Form -->
