@@ -1,20 +1,25 @@
-Hur man använder nätsidan.
+Hur man använder Prakticums Bildbank© 
 
   Inloggning
-  Inloggningen sker i övre högra hörnet. En pop-up kommer fram och där skriver du in dina kredentialer.
+  Inloggningen sker i övre högra hörnet. En pop-up kommer fram och där skriver du in dina kredentialer. En "ladda upp" knapp kommer fram 
+  i övre högra hörnet
   
   Att ladda upp en bild
   Användaren måst vara loggad in för att ladda upp en bild till bildbanken. Du kan ange en tittel åt bilden och ge tags till den.
-  Bilden väljs från din dator. Tags används för att de är enklare och kategorisera och hitta i framtiden.
+  Bilden väljs från din dator. Du kan manuelt söka efter den eller helt rakt dra filen till "drag and drop" zonen. Tags används för att
+  de är enklare och kategorisera och hitta i framtiden.
   
   Nyckelord/Sökfunktion
-  I övre delen av sidan?? finns det en sökfunktion. Här kan man söka efter nyckelord som har lagats till bilderna som bildens tilläggare
+  I övre delen av sidan finns det en sökfunktion. Här kan man söka efter nyckelord som har lagats till bilderna som bildens tilläggare
   kan fylla in.
   
   Huvudsida
-  Man kan också bara kolla genom bilder som har läggt till av alla användare. Du kan sortera dem med; nyaste, äldsta, storlek och i alfabetisk ordning enligt tags/bildens namn?
-  Sidan har en "oendlig" scroll. Sidan laddar upp altid nya bilder automatisk när man kommer neråt på sidan.
+  Man kan också bara kolla genom bilder som har läggt till av alla användare.  Sidan har en "oendlig" scroll. Sidan laddar upp altid nya
+  bilder automatisk när man kommer neråt på sidan.
   
+  Att logga ut
+  
+  Knappen du loggade in med har förvandlats till en Logga Ut-knapp. Tryck  på den så loggar den ut dig. Dukan inte ladda upp bilder mera.
   
   
   
