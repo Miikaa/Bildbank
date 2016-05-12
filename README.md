@@ -39,7 +39,7 @@ Day 14 (9.5) Login fixat, thanks Miika!
 
 Day 15 (10.5) Lite problem här; om man vill ha infinite scroll att fungera så fungerar inte loginen. Om man igen vill logga in så fungerar inte infinite scroll. What do? Borde man lite gå tillbaka i tiden och börja igen med en fungerande version av infinite scrollen, och sedan försöka steg-för-steg adda in loginen?
 
-Day 16 (11.5) Fixade login & infinite scroll problemet! :) Tog bort alla .zip filar och uppdaterade de filerna som redan fanns här. Alla borde vara up-to-date, så ladda ner dem som en .zip -fil via Github då ni ska ändra på saker. 
+Day 16 (11.5) Fixade login & infinite scroll problemet! :) Tog bort alla .zip filar och uppdaterade de filerna som redan fanns här. Alla borde vara up-to-date, så ladda ner dem som en .zip -fil via Github då ni ska ändra på saker. Att ladda up filer fungerar så, att den sätter filen i en mapp som heter "files". Some progress, at least.
 
 TO DO
 
