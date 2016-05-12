@@ -304,7 +304,7 @@
                 <input type="file" name="js-upload-files" id="js-upload-files" multiple>
               </div>
             </div>
-
+			<br />
           <!-- Drop Zone 
           <h5>...eller dra och droppa dem här!</h5>
           <div class="upload-drop-zone" id="drop-zone">
