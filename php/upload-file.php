@@ -8,7 +8,7 @@ if(isset($_POST['js-upload-submit'])) {
 	$image_size = number_format(($_FILES['js-upload-files']['size']/1024)); 	// filstorlek i MB, utan 1024 kommer det i kB
 	$filelocation = $_FILES['js-upload-files']['tmp_name'];	// temporär mapp
 	$title = $_POST['image_name'];
-	$desc= $_POST['image_desc']; // MÅSTE GÖRAS I DATABASEN!!
+	$desc= $_POST['image_desc']; 
 	$tag = $_POST['image_tag'];
 	$image_path = 'files/';
 	
