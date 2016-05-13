@@ -321,13 +321,14 @@
 				</div>
 				
 			</form>
-		<button type="submit" name="js-upload-submit" class="btn btn-md btn-default" id="js-upload-submit">Upload</button>
+		<button type="submit" name="js-upload-submit" class="btn btn-lg btn-warning save" id="js-upload-submit">Spara</button>
+		
         </div> 
       </div>
       </div>
 	  </form>
       <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Stäng</button>
+        <button type="button" class="btn btn-primary" data-dismiss="modal">Stäng</button>
       </div>
     </div>
 

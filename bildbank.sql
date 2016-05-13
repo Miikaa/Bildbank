@@ -3,9 +3,9 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: 26.04.2016 klo 14:40
--- Palvelimen versio: 10.1.10-MariaDB
--- PHP Version: 7.0.4
+-- Generation Time: May 12, 2016 at 10:52 AM
+-- Server version: 10.1.10-MariaDB
+-- PHP Version: 5.6.19
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -23,45 +23,57 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Rakenne taululle `image`
+-- Table structure for table `image`
 --
 
 CREATE TABLE `image` (
   `image_id` int(11) NOT NULL,
-  `image_name` varchar(50) NOT NULL,
+  `image_name` varchar(50) CHARACTER SET latin1 NOT NULL,
+  `image_desc` text COLLATE utf8_swedish_ci NOT NULL,
   `image_category` int(11) NOT NULL,
   `image_path` int(11) NOT NULL,
   `image_date` date NOT NULL,
   `image_tag` int(11) NOT NULL,
-  `image_size` blob NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  `image_size` varchar(11) COLLATE utf8_swedish_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_swedish_ci;
 
 -- --------------------------------------------------------
 
 --
--- Rakenne taululle `kategori`
+-- Table structure for table `img_to_tag`
+--
+
+CREATE TABLE `img_to_tag` (
+  `imgid` int(11) NOT NULL,
+  `tagid` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_swedish_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `kategori`
 --
 
 CREATE TABLE `kategori` (
   `id` int(11) NOT NULL,
-  `kategori` varchar(50) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  `kategori` varchar(50) CHARACTER SET latin1 NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_swedish_ci;
 
 -- --------------------------------------------------------
 
 --
--- Rakenne taululle `login`
+-- Table structure for table `login`
 --
 
 CREATE TABLE `login` (
   `id` int(11) NOT NULL,
-  `username` varchar(20) NOT NULL,
-  `password` varchar(20) NOT NULL,
-  `email` varchar(50) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  `username` varchar(20) CHARACTER SET latin1 NOT NULL,
+  `password` varchar(20) CHARACTER SET latin1 NOT NULL,
+  `email` varchar(50) CHARACTER SET latin1 NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_swedish_ci;
 
 --
--- Vedos taulusta `login`
+-- Dumping data for table `login`
 --
 
 INSERT INTO `login` (`id`, `username`, `password`, `email`) VALUES
@@ -70,13 +82,13 @@ INSERT INTO `login` (`id`, `username`, `password`, `email`) VALUES
 -- --------------------------------------------------------
 
 --
--- Rakenne taululle `tags`
+-- Table structure for table `tags`
 --
 
 CREATE TABLE `tags` (
   `id` int(11) NOT NULL,
-  `tag` varchar(50) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  `tag` varchar(50) CHARACTER SET latin1 NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_swedish_ci;
 
 --
 -- Indexes for dumped tables
