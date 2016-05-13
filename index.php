@@ -257,7 +257,7 @@
 									<h4>classy</h4>
 								</div>
 								<div class="modal-footer">
-									<button class="btn btn-default" data-dismiss="modal">Stäng</button>
+									<button class="btn btn-primary" data-dismiss="modal">Stäng</button>
 								</div>
 							</div>
 						</div>
@@ -393,9 +393,9 @@
 
 <!-- These are all the links that can be loaded. -->
 	<div id="pages">
-		<a href="./index.php"></a>
-		<a href="./page2.php"></a>
-		<a href="./page3.php"></a>
+		<a href="index.php"></a>
+		<a href="page2.php"></a>
+		<a href="page3.php"></a>
 	</div>
 					<!-- SCRIPTS -->
 					
