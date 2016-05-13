@@ -48,6 +48,6 @@ Day 18(13.5)PSA vi måst bli färdiga med dehä typ ida
 
 TO DO
     
-    Att få bilderna komma från sk. användaren till själva bildbanken. 
+    Att få bilderna komma från sk. användaren till själva bildbanken + searchen. 
     
     Egentligen är frontend färdig så det är bara backend som behövs.
