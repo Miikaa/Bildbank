@@ -41,15 +41,13 @@ Day 15 (10.5) Lite problem här; om man vill ha infinite scroll att fungera så 
 
 Day 16 (11.5) Fixade login & infinite scroll problemet! :) Tog bort alla .zip filar och uppdaterade de filerna som redan fanns här. Alla borde vara up-to-date, så ladda ner dem som en .zip -fil via Github då ni ska ändra på saker. Att ladda up filer fungerar så, att den sätter filen i en mapp som heter "files". Some progress, at least.
 
-TO DO
+Day 17(12.5)
 
-    -Infinite scroll //DONE
+Day 18(13.5)PSA vi måst bli färdiga med dehä typ ida 
+
+
+TO DO
     
-    -Att sidan är 2 bilder bred på telefonen/en fittit liten skärm
+    Att få bilderna komma från sk. användaren till själva bildbanken. 
     
-    -En filter funktion?
-    
-    -När man trycker på en bild visar sidan den i större resolution samt med mera info om bilden. (datum,resolution, upplodare, etc.) //DONE
-    
-    -Är "search baren" lite för bred...?
-    
+    Egentligen är frontend färdig så det är bara backend som behövs.
