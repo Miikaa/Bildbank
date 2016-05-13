@@ -3,18 +3,19 @@
 // hämtar allt från "name" i index.php	
 //$msg = "test";
 if(isset($_POST['js-upload-submit'])) {
-	$filename = $_FILES['js-upload-files']['name'];			 // filens namn
-	$filetype = $_FILES['js-upload-files']['type']; 			// filtyp
-	$filesize = number_format(($_FILES['js-upload-files']['size']/1024)); 	// filstorlek i MB, utan 1024 kommer det i kB
+	$image_name = $_FILES['js-upload-files']['name'];			 // filens namn
+	$image_type = $_FILES['js-upload-files']['type']; 			// filtyp
+	$image_size = number_format(($_FILES['js-upload-files']['size']/1024)); 	// filstorlek i MB, utan 1024 kommer det i kB
 	$filelocation = $_FILES['js-upload-files']['tmp_name'];	// temporär mapp
 	$title = $_POST['image_name'];
 	$desc= $_POST['image_desc']; // MÅSTE GÖRAS I DATABASEN!!
 	$tag = $_POST['image_tag'];
+	$image_path = 'files/';
 	
 	// != inte! alltså om det INTE BLIR ERROR kör vi koden yknow
 	// annors så kommer error-meddelandet
 	if(!$_FILES['js-upload-files']['error']) {
-		$file_ending = explode ('.', $filename); 	// delar upp till en array
+		$file_ending = explode ('.', $image_name); 	// delar upp till en array
 		$file_extension = end($file_ending);		// plockar sista värdet i "$file_ending" -arrayn
 		$allowed_endings = array('jpg', 'gif', 'png', 'svg'); 	// bilder som är ok
 		
@@ -23,25 +24,39 @@ if(isset($_POST['js-upload-submit'])) {
 	}
 		
 		// kollar filtyperna, storleken och ändelsen
-		if($filetype=="image/gif"
-			 ||$filetype=="image/jpeg"
-			 ||$filetype=="image/png"
-			 ||$filetype=="image/x-png"
-			 ||$filetype=="image/svg+xml"
-			 ||$filesize<=5
+		if($image_type=="image/gif"
+			 ||$image_type=="image/jpeg"
+			 ||$image_type=="image/png"
+			 ||$image_type=="image/x-png"
+			 ||$image_type=="image/svg+xml"
+			 ||$image_size<=10
 			 && in_array($file_extension, $allowed_endings)) {
 			 
 				// vvvv kopierar filen till "files"-mappen
-				if(!copy ($filelocation, 'files/' . $filename)) {
-					$msg = "$filename kunde inte sparas";
+				if(!copy ($filelocation, $image_path . $image_name)) {
+					$msg = "$image_name kunde inte sparas";
 				} else {
-					/*$msg = "Filnamn: $filename<br>
-					Filtyp: $filetype<br>
+					$q_insert_img = "INSERT INTO image 
+									(image_name, image_path, image_size)
+									VALUES 
+									('$image_name','$image_path', '$image_size')";
+									
+					if (mysqli_query($link, $q_insert_img)) {
+						$msq = "Bilden $image_name är sparad.";
+						
+					} else {
+						$msg = "Något gick fel med uppladdningen.";
+						$msg .= mysqli_error($link);
+					}
+					
+					
+					/*$msg = "Filnamn: $image_name<br>
+					Filtyp: $image_type<br>
 					Filstorlek: $filesize MB";*/
 				}
 
-			} elseif ($filesize>5) {
-				$msg = "För stor fil, max storlek är 5MB. Pröva på nytt!";
+			} elseif ($image_size>10) {
+				$msg = "För stor fil, max storlek är 10MB. Pröva på nytt!";
 			 } else {
 				$msg = "Fel filtyp. Kolla att filen är en jpeg, png, gif eller svg och pröva på nytt.";
 			 }
