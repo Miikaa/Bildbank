@@ -1,4 +1,13 @@
 img { max-width: 100%; } 
+
+button.btn.save {
+	padding-left: 45px;
+	background-image: url('../img/save.png');
+	background-repeat: no-repeat;
+	background-position: 8px 8px;
+	
+
+	}
  
 #logo {
 	height: 50px;
