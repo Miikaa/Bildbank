@@ -11,6 +11,7 @@ if(isset($_POST['js-upload-submit'])) {
 	$desc= $_POST['image_desc']; 
 	$tag = $_POST['image_tag'];
 	$image_path = 'files/';
+	$image_date = date("Y-m-d");
 	
 	// != inte! alltså om det INTE BLIR ERROR kör vi koden yknow
 	// annors så kommer error-meddelandet
@@ -37,9 +38,9 @@ if(isset($_POST['js-upload-submit'])) {
 					$msg = "$image_name kunde inte sparas";
 				} else {
 					$q_insert_img = "INSERT INTO image 
-									(image_name, image_path, image_size)
+									(image_name, image_path, image_size, image_date)
 									VALUES 
-									('$image_name','$image_path', '$image_size')";
+									('$image_name','$image_path', '$image_size', '$image_date')";
 									
 					if (mysqli_query($link, $q_insert_img)) {
 						$msq = "Bilden $image_name är sparad.";

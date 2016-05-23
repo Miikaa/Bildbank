@@ -20,19 +20,28 @@
 		</head>
 		<body id="start">
 		<?php
-		$q_images = "SELECT * FROM images";
-		$r_images = mysql_query($link, $q_images);
+		$q_images = "SELECT * FROM image";
+		$r_images = mysqli_query($link, $q_images);
 		if(!$r_images) {
 			echo mysqli_error($link);
 		}
+		$image_folder = "files/";
+		
 		echo "<ul>";
 		while($row = mysqli_fetch_array($r_images)) {
-			
+			/*
 			echo "<li>bildnamn: " . $row['image_name'] . "</li>
 			<li>stig: " . $row['image_path'] . "</li>
 			<li>datum: " . $row['image_date'] . "</li>
 			<li>storlek: " . $row['image_size'] . "</li>
 			<li>id: " . $row['image_id'] . "</li>";
+			*/
+			echo '<div class="col-sm-6 col-md-3">
+						
+							<a href="#" title="' . $row['image_name'] . '" class="img-responsive thumbnail" data-toggle="modal" data-target="#lightbox">
+								<img src="files/' . $row['image_name']  . '" alt="' . $row['image_name'] . '">
+							</a>
+						</div>';
 		}
 		echo "</ul>";
 		?>
