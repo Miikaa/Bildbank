@@ -1,7 +1,0 @@
-[23-May-2016 08:35:24 Europe/Helsinki] PHP Warning:  mysql_query() expects parameter 1 to be string, object given in /home2/datanz3b/public_html/datanomlabb.net/dhg13/dhg13bildbank/select_test.php on line 24
-[23-May-2016 08:35:24 Europe/Helsinki] PHP Warning:  mysqli_fetch_array() expects parameter 1 to be mysqli_result, null given in /home2/datanz3b/public_html/datanomlabb.net/dhg13/dhg13bildbank/select_test.php on line 29
-[23-May-2016 08:35:46 Europe/Helsinki] PHP Warning:  mysql_query() expects parameter 1 to be string, object given in /home2/datanz3b/public_html/datanomlabb.net/dhg13/dhg13bildbank/select_test.php on line 24
-[23-May-2016 08:35:46 Europe/Helsinki] PHP Warning:  mysqli_fetch_array() expects parameter 1 to be mysqli_result, null given in /home2/datanz3b/public_html/datanomlabb.net/dhg13/dhg13bildbank/select_test.php on line 29
-[23-May-2016 08:38:40 Europe/Helsinki] PHP Warning:  mysql_query() expects parameter 1 to be string, object given in /home2/datanz3b/public_html/datanomlabb.net/dhg13/dhg13bildbank/select_test.php on line 24
-[23-May-2016 08:38:40 Europe/Helsinki] PHP Warning:  mysqli_fetch_array() expects parameter 1 to be mysqli_result, null given in /home2/datanz3b/public_html/datanomlabb.net/dhg13/dhg13bildbank/select_test.php on line 29
-[23-May-2016 10:12:52 Europe/Helsinki] PHP Parse error:  syntax error, unexpected '$image_folder' (T_VARIABLE), expecting ',' or ';' in /home2/datanz3b/public_html/datanomlabb.net/dhg13/dhg13bildbank/select_test.php on line 42
