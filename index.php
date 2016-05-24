@@ -3,6 +3,7 @@
 	$msg = "";
 	include('php/db_connect.php');
 	include('php/upload-file.php'); //hämtar php-filen
+	include('php/functions.php'); //hämtar php-filen
 	
 ?>
 <!DOCTYPE html>
@@ -87,163 +88,25 @@
 					</div><!-- /input-group -->
 				  </div><!-- /.col-lg-6 -->
 				  </header>
-											<!-- BILDERNA -->
+				
+				<!-- BILDERNA -->
 			
 				<div id="scroll-container">
-				<div class="row">
-					
-						<div class="col-sm-6 col-md-3">
+					<?php
 						
-							<a href="#" title="Image 1" class="img-responsive thumbnail" data-toggle="modal" data-target="#lightbox">
-								<img src="img/1.jpg" alt=" ">
-							</a>
-						</div>
-						
-						<div class="col-sm-6 col-md-3">
-						
-								<a href="#" title="Image 2" class="img-responsive thumbnail" data-toggle="modal" data-target="#lightbox">
-									<img src="img/2.jpg" alt="">
-								</a>
-						</div>
-						
-						<div class="col-sm-6 col-md-3">
-						
-								<a href="#" title="Image 3" class="img-responsive thumbnail" data-toggle="modal" data-target="#lightbox">
-									<img src="img/3.jpg" alt="">
-								</a>
-						</div>
-						
-						<div class="col-sm-6 col-md-3">
-						
-								<a href="#" title="Image 4" class="img-responsive thumbnail" data-toggle="modal" data-target="#lightbox">
-									<img src="img/4.jpg" alt="">
-								</a>
-						</div>
-					</div>
-
-					<div class="row">
-						
-							<div class="col-sm-6 col-md-3">
-							
-									<a href="#" title="Image 5" class="img-responsive thumbnail" data-toggle="modal" data-target="#lightbox">
-										<img src="img/1.jpg" alt="">
-									</a>
-							</div>
-						
-						<div class="col-sm-6 col-md-3">
-						
-									<a href="#" title="Image 6" class="img-responsive thumbnail" data-toggle="modal" data-target="#lightbox">
-										<img src="img/2.jpg" alt="">
-									</a>
-						</div>
-						
-						<div class="col-sm-6 col-md-3">
-						
-							<a href="#" title="Image 7" class="img-responsive thumbnail" data-toggle="modal" data-target="#lightbox">
-								<img src="img/3.jpg" alt="">
-							</a>
-						</div>
-								
-						<div class="col-sm-6 col-md-3">
-						
-							<a href="#" title="Image 8" class="img-responsive thumbnail" data-toggle="modal" data-target="#lightbox">
-								<img src="img/4.jpg" alt="">
-							</a>
-						</div>
-					</div>
-					
-					<div class="row">
-					
-					<div class="col-sm-6 col-md-3">
-					
-									<a href="#" title="Image 9" class="img-responsive thumbnail" data-toggle="modal" data-target="#lightbox">
-										<img src="img/1.jpg" alt="">
-									</a>
-							</div>
-					
-					<div class="col-sm-6 col-md-3">
-					
-									<a href="#" title="Image 10" class="img-responsive thumbnail" data-toggle="modal" data-target="#lightbox">
-										<img src="img/2.jpg" alt="">
-									</a>
-							</div>
-							
-					<div class="col-sm-6 col-md-3">
-					
-									<a href="#" title="Image 11" class="img-responsive thumbnail" data-toggle="modal" data-target="#lightbox">
-										<img src="img/3.jpg" alt="">
-									</a>
-							</div>
-							
-					<div class="col-sm-6 col-md-3">
-					
-									<a href="#" title="Image 12" class="img-responsive thumbnail" data-toggle="modal" data-target="#lightbox">
-										<img src="img/4.jpg" alt="">
-									</a>
-							</div>
-							
-					</div>
-					
-					<div class="row">
-						<div class="col-sm-6 col-md-3">
-						
-									<a href="#" title="Image 13" class="img-responsive thumbnail" data-toggle="modal" data-target="#lightbox">
-										<img src="img/1.jpg" alt="">
-									</a>
-							</div>
-							
-					<div class="col-sm-6 col-md-3">
-					
-									<a href="#" title="Image 14" class="img-responsive thumbnail" data-toggle="modal" data-target="#lightbox">
-										<img src="img/2.jpg" alt="">
-									</a>
-							</div>
-							
-					<div class="col-sm-6 col-md-3">
-					
-									<a href="#" title="Image 15" class="img-responsive thumbnail" data-toggle="modal" data-target="#lightbox">
-										<img src="img/3.jpg" alt="">
-									</a>
-							</div>
-							
-					<div class="col-sm-6 col-md-3">
-					
-									<a href="#" title="Image 16" class="img-responsive thumbnail" data-toggle="modal" data-target="#lightbox">
-										<img src="img/4.jpg" alt="">
-									</a>
-							</div>
-					</div>
-					
-					<div class="row">
-						<div class="col-sm-6 col-md-3">
-						
-									<a href="#" title="Image 17" class="img-responsive thumbnail" data-toggle="modal" data-target="#lightbox">
-										<img src="img/1.jpg" alt="">
-									</a>
-							</div>
-					<div class="col-sm-6 col-md-3">
-					
-									<a href="#" title="Image 18" class="img-responsive thumbnail" data-toggle="modal" data-target="#lightbox">
-										<img src="img/2.jpg" alt="">
-									</a>
-							</div>
-					<div class="col-sm-6 col-md-3">
-										<a href="#" title="Image 19" class="img-responsive thumbnail" data-toggle="modal" data-target="#lightbox">
-										<img src="img/3.jpg" alt="">
-									</a>
-							</div>
-					<div class="col-sm-6 col-md-3">
-					
-									<a href="#" title="Image 20" class="img-responsive thumbnail" data-toggle="modal" data-target="#lightbox">
-										<img src="img/4.jpg" alt="">
-									</a>
-							</div>
-						
-						</div>
-					</div> <!-- end of scroll-container -->
+						while($row = mysqli_fetch_array($r_images)) {
+							echo '<div class="col-sm-6 col-md-3">
+											<a href="#" title="' . $row['image_name'] . '" class="img-responsive thumbnail" data-toggle="modal" data-target="#lightbox">
+												<img src="files/' . $row['image_name']  . '" alt="' . $row['image_name'] . '">
+											</a>
+										</div>';
+						}
+		
+					?>
+				</div> <!-- end of scroll-container -->
 					
 					
-					<!-- //// END OF IMAGES //// -->
+				<!-- //// END OF IMAGES //// -->
 				
 				<!-- /// THUMBNAIL MODAL /// -->
 				
@@ -254,7 +117,7 @@
 								<div class="modal-body">
 									<img src="" alt="" />
 
-									<h4>classy</h4>
+									
 								</div>
 								<div class="modal-footer">
 									<button class="btn btn-primary" data-dismiss="modal">Stäng</button>
