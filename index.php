@@ -1,10 +1,5 @@
 <?php	
-	session_start();
-	$msg = "";
-	include('php/db_connect.php');
-	include('php/upload-file.php'); //hämtar php-filen
 	include('php/functions.php'); //hämtar php-filen
-	
 ?>
 <!DOCTYPE html>
 <html>
@@ -96,7 +91,7 @@
 						
 						while($row = mysqli_fetch_array($r_images)) {
 							echo '<div class="col-sm-6 col-md-3">
-											<a href="#" title="' . $row['image_name'] . '" class="img-responsive thumbnail" data-toggle="modal" data-target="#lightbox">
+											<a href="#" title="' . $row['image_name'] . $row['image_desc'] . '" class="img-responsive thumbnail" data-toggle="modal" data-target="#lightbox">
 												<img src="files/' . $row['image_name']  . '" alt="' . $row['image_name'] . '">
 											</a>
 										</div>';
@@ -116,9 +111,8 @@
 							<div class="modal-content">
 								<div class="modal-body">
 									<img src="" alt="" />
-
-									
-								</div>
+										
+									</div>
 								<div class="modal-footer">
 									<button class="btn btn-primary" data-dismiss="modal">Stäng</button>
 								</div>
@@ -152,12 +146,12 @@
 			<form method="post" action="<?php echo $_SERVER['PHP_SELF']; ?>" enctype="multipart/form-data">
 				<fieldset>
 				  <div class="form-group">
-						<label for="title">Bildens titel</label>
+						<label for="image_title">Bildens titel</label>
 						<input type="text" class="form-control" id="image_name" name="image_name">
 				  </div>
 				  <div class="form-group">
-				  <label for="desc">Beskrivning</label>
-				  <textarea class="form-control vresize" rows="4" id="desc" name="desc"></textarea>
+				  <label for="image_desc">Beskrivning</label>
+				  <textarea class="form-control vresize" rows="4" id="image_desc" name="image_desc"></textarea>
 				</div>
 
           <!-- Standar Form -->
@@ -177,7 +171,7 @@
 		  <!-- tags -->
 			<form id="defaultForm" method="post" class="form-horizontal">
 				<div class="form-group">
-					<label for="tags">Ange tags</label>
+					<label for="image_tags">Ange tags</label>
 					<div class="form-group">
 						<input type="text" name="image_tag" id="image_tag" class="form-control input-sm" value="" data-role="tagsinput" />
 					</div>

@@ -10,8 +10,8 @@ $(document).ready(function() {
             src = $img.attr('src'),
             alt = $img.attr('alt'),
             css = {
-                'maxWidth': $(window).width() - 100,
-                'maxHeight': $(window).height() - 100
+                'maxWidth': $(window).width() * .7,
+                'maxHeight': $(window).height() * .7
             };
     
         $lightbox.find('.close').addClass('hidden');
@@ -26,7 +26,7 @@ $(document).ready(function() {
         $lightbox.find('.modal-dialog').css({'width': $img.width()});
         $lightbox.find('.close').removeClass('hidden');
     });
-});
+}); 
 /*********************************************************************************
 										!!!! INFINITE SCROLL !!!!
 **********************************************************************************/
@@ -71,8 +71,8 @@ jQuery(document).ready(function() {
             src = $img.attr('src'),
             alt = $img.attr('alt'),
             css = {
-                'maxWidth': $(window).width() - 100,
-                'maxHeight': $(window).height() - 100
+                'maxWidth': $(window).width() * .7,
+                'maxHeight': $(window).height() * .7
             };
     
         $lightbox.find('.close').addClass('hidden');
