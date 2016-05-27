@@ -1,7 +1,6 @@
 <?php	
 	session_start();
 	$msg = "";
-	include('php/db_connect.php'); //hämtar php-filen
 	include('php/functions.php'); //hämtar php-filen
 ?>
 <!DOCTYPE html>
@@ -59,7 +58,7 @@
 			<header class="row">
 			<div class="col-md-12">
 											<!-- LOGO -->
-				<a href="index.php">
+				<a href="#">
 					<img id="logo" src="img/prakticum_logo.svg">
 				</a>
 											<!-- LOGIN -->						
@@ -91,16 +90,13 @@
 			
 				<div id="scroll-container">
 					<?php
-						$counter =1 ;
+						
 						while($row = mysqli_fetch_array($r_images)) {
-							if($counter % 4 == 1) { echo '<div class="row">'; }
-							echo '<div class="col-sm-6 col-md-3 item">
-									<a href="#" title="' . $row['image_title'] . '" class="img-responsive thumbnail well" data-toggle="modal" data-target="#lightbox">
-										<img src="files/' . $row['image_name']  . '" alt="' . $row['image_title'] . '">
-									</a>
-									</div>';
-						if($counter % 4 == 0) { echo '</div>'; }
-						$counter++;
+							echo '<div class="col-sm-6 col-md-3">
+											<a href="#" title="' . $row['image_title'] . '" class="img-responsive thumbnail" data-toggle="modal" data-target="#lightbox">
+												<img src="files/' . $row['image_name']  . '" alt="' . $row['image_title'] . '">
+											</a>
+										</div>';
 						}
 		
 					?>

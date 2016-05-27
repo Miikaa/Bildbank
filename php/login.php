@@ -1,6 +1,6 @@
 <?php
 session_start();
-include('functions.php');
+include('db_connect.php');
 /*if(isset($_SESSION['user'])) {
 	header('Location: index.php');
 }*/

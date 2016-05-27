@@ -36,21 +36,7 @@ button.btn.save {
 .col-sm-6, .col-md-12 {
 	padding: 15px;
 }
-.container .img-rounded {
-	-webkit-transition: all 1s ease;
-	-moz-transition: all 1s ease;
-	-o-transition: all 1s ease;
-	-ms-transition: all 1s ease;
-	transition: all 1s ease;
-}
 
-.container .img-rounded:hover {
-	 -webkit-transform: scale(1.10);
-	-moz-transform: scale(1.10);
-	-o-transform: scale(1.10);
-	-ms-transform: scale(1.10);
-	transform: scale(1.10); 
-}
 
 .input-group {
 	padding:15px;
@@ -96,14 +82,6 @@ float: right;
 #login:hover { opacity: 0.7; }
 
 /* LOGIN SIDAN POPUP SAK */
-
-/*html,
-body {
-  background: #efefef;
-  padding: 10px;
-  font-family: 'Varela Round';
-} */
-/*=== 2. Anchor Link ===*/
 a {
   color: #aaaaaa;
   transition: all ease-in-out 200ms;
@@ -330,17 +308,6 @@ label.form-invalid:after {
 label:hover:before {
   border: 1px solid #f6f6f6 !important;
 }
-/*=== Customization ===*/
-/* radio aspect */
-/* [type="checkbox"]:not(:checked) + label:before,
-[type="checkbox"]:checked + label:before {
-  border-radius: 3px;
-}
-[type="radio"]:not(:checked) + label:before,
-[type="radio"]:checked + label:before {
-  border-radius: 35px;
-}
-/* selected mark aspect */
 [type="checkbox"]:not(:checked) + label:after,
 [type="checkbox"]:checked + label:after {
   content: '✔';
@@ -378,7 +345,7 @@ label:hover:before {
     display: inline-block;
     text-align: center;   
 }
-#lightbox .modal-content .modal-body img { max-width: 800px; }
+/* #lightbox .modal-content .modal-body img { max-width: 800px; } */
 
 #lightbox .close {
     opacity: 1;
@@ -390,9 +357,12 @@ label:hover:before {
     position: absolute;
     top: -15px;
     right: -55px;
-    
-    z-index:1032;
+	z-index:1032;
 }
+/* pinterest thing */
+
+
+/* pinterest end */
 /* tags */
 .bootstrap-tagsinput {
     width: 100%;

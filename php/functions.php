@@ -1,30 +1,4 @@
 <?php
-	session_start();
-	$msg = "";
-// DB CONNECT
-$db_host = "localhost"; //host
-$db_user = "datanz3b_dhg13bi";		//DB användarnamn 
-$db_pass = "ph0t0b1ld3r";		//DB lösenord
-$db = "datanz3b_dhg13bildbank";			//Databasnamn
-
-$link = mysqli_connect( $db_host, $db_user, $db_pass, $db);
-
-if(!$link) {
-	echo "Kunde inte kontakta Databasen";
-	exit();
-}
-
-if(!mysqli_set_charset($link, "UTF8")) {
-	echo "kunde inte använda UTF-8";
-	exit();
-}
-
-if(!mysqli_select_db($link, $db)) {
-	echo "Kunde inte välja Databasen";
-	exit();
-}
-// !!!DB-CONNECT END!!!
-
 $q_images = "SELECT * FROM image";
 		$r_images = mysqli_query($link, $q_images);
 		if(!$r_images) {
@@ -37,8 +11,8 @@ if(isset($_POST['js-upload-submit'])) {
 	$image_type = $_FILES['js-upload-files']['type']; 			// filtyp
 	$image_size = number_format(($_FILES['js-upload-files']['size']/1024)); 	// filstorlek i MB, utan 1024 kommer det i kB
 	$filelocation = $_FILES['js-upload-files']['tmp_name'];	// temporär mapp
-	$image_title = $_POST['image_name'];
-	$image_desc= $_POST['image_desc']; 
+	$image_title = $_POST['image_title'];
+	$image_desc = $_POST['image_desc']; 
 	$image_tag = $_POST['image_tag'];
 	$image_path = 'files/';
 	$image_date = date("Y-m-d");
@@ -68,9 +42,9 @@ if(isset($_POST['js-upload-submit'])) {
 					$msg = "$image_name kunde inte sparas";
 				} else {
 					$q_insert_img = "INSERT INTO image 
-									(image_name, image_path, image_size, image_date, image_tag, image_desc)
+									(image_name, image_title, image_path, image_size, image_date, image_tag, image_desc)
 									VALUES 
-									('$image_name','$image_path', '$image_size', '$image_date', '$image_tag', '$image_desc')";
+									('$image_name', '$image_title','$image_path', '$image_size', '$image_date', '$image_tag', '$image_desc')";
 									
 					if (mysqli_query($link, $q_insert_img)) {
 						$msq = "Bilden $image_name är sparad.";
